@@ -81,7 +81,7 @@ Rmarkdown Top5_Bundesliga-Germany_xG_Analysis.Rmd
 
 
 Data Sources
-Data was sourced from official Transfermarkt.de websites, Kaggle datasets, and also other open Github Projects. Specific data files and their sources are listed within each notebook and script.
+Data was sourced from Kaggle datasets. Specific data files and their sources are listed within each notebook and script.
 
 Contributing
 Contributions are welcome. Please fork the repository and submit a pull request with your changes.
