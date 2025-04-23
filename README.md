@@ -1,56 +1,84 @@
-# Bundesliga Club Performance Analysis
+# Performance and Valuation Insights: German Bundesliga Portfolio
 
-### Project Overview
-This project analyzes the performance and market value of FC Bayern Munich during the 2023-2024 Bundesliga season. Utilizing data analytics tools and techniques in Python and SQL, the analysis offers actionable insights focusing on key performance indicators, trends, and future market value forecasts.
+This repository contains a Jupyter Notebook and accompanying SQL scripts analyzing FC Bayern Munich’s performance and market dynamics during the 2023/2024 Bundesliga season. It demonstrates a full-stack data workflow—from raw CSV ingestion and DuckDB SQL queries to Pandas preprocessing, visualization, and predictive modeling.
 
-### Repository Structure
+---
 
-```plaintext
-bundesliga-analysis/
-├── data/                    # Datasets for FC Bayern Munich
-│   └── bayern/              # Specific datasets for FC Bayern Munich
-│
-├── notebooks/               # Jupyter notebook for Python analysis
-│   └── Bayern.ipynb         # Analysis for Bayern Munich
-│
-├── src/                     # Source code for Python utilities and SQL scripts
-│   ├── analysis_utils.py    # Python utilities
-│   └── sql_queries.sql      # SQL script files
-│
-├── outputs/                 # Generated reports, figures, and models
-│   └── bayern/              # Outputs for Bayern Munich
-│
-└── README.md                # Overview and documentation
+## 📂 Project Structure
 ```
-## Getting Started
-### Prerequisites
+├── Raw-Data_CSV_Football-Analysis_German-Bundesliga/ # Kaggle-sourced CSV datasets ├── sql/ │ └── sql_queries.sql # Standalone SQL queries (club_id = 27) ├── bundesliga_portfolio_final.ipynb # Main analysis notebook └── README.md # This file
+```
 
-Ensure you have the following installed:
+---
 
-Python: Along with libraries like pandas, numpy, matplotlib, seaborn, plotly, and scipy.
-Database Access: Ensure you have access to a SQL server or a local database setup, such as SQLite.
+## 🔑 Key Features
 
-### Installation
-Clone the repository to your local machine:
+1. **Hybrid SQL & Python Workflow**  
+   - **DuckDB** views over CSVs for fast, in-notebook joins & aggregations  
+   - **Pandas**, **Matplotlib/Seaborn**, and **Plotly** for cleaning, EDA, and interactive plotting  
 
-git clone https://github.com/itzmore-mph/BundesligaPerformanceAnalysis
-.git
-cd bundesliga-analysis
+2. **Data Quality & Preprocessing**  
+   - Snake_case column standardization via regex helper  
+   - Datetime parsing (`errors='coerce'`) to detect invalid dates  
+   - Early **orphan-key** checks to ensure referential integrity  
 
-### Running the Analysis
-Python
-Navigate to the notebooks/ directory and run the Jupyter Notebook:
+3. **Comprehensive Analysis**  
+   - **xG vs Goals** correlation  
+   - **Match result** distribution (W/D/L)  
+   - **Market-value** trend analysis  
+   - **Predictive modeling** with Ridge regression & 5-fold CV  
+   - **Cumulative** xG and actual goals over time  
 
-jupyter notebook Bayern.ipynb
+4. **Standalone SQL Queries**  
+   - Fetch total goals, xG, assists, match results, and most-valuable players  
+   - Parameterized on `club_id = 27` for FC Bayern, easily adjustable  
 
-Data Sources
-Data was sourced from Kaggle datasets and other reputable sources. Specific data files and their sources are mentioned within the notebook.
+5. **Reproducibility**  
+   - Clear section headings & narrative interpretations  
+   - Requirements list for easy environment setup  
+   - README and `/sql/` folder document how to run everything end-to-end  
 
-Contributing
-Contributions are welcome! Please fork the repository and submit a pull request with your changes.
+---
 
-License
-This project is licensed under the Apache License - see the LICENSE.md file for details.
+## 🚀 Getting Started
 
-Contact
-For queries or collaboration, please open an issue in the GitHub repository.
+1. **Clone the repository**  
+   ```bash
+   git clone https://github.com/itzmore-mph/itzmore-mph-portfolio.git
+   cd itzmore-mph-portfolio
+   ```
+
+2. **Install dependencies**
+
+pip install pandas numpy seaborn matplotlib plotly duckdb scikit-learn
+
+3. **Verify data path**
+Ensure the Raw-Data_CSV_Football-Analysis_German-Bundesliga/ directory sits at the project root.
+
+4. **Run the Jupyter Notebook**
+
+jupyter notebook bundesliga_portfolio_final.ipynb
+
+5. **Execute the SQL script (optional)**
+If you have DuckDB installed, you can run all SQL queries in one go:
+
+duckdb --read-only -f sql/bayern_queries.sql
+Or open sql/sql_queries.sql in your preferred SQL client—remember to adjust club_id or <match_id> as needed.
+
+## Usage & Interpretation
+Follow the notebook’s narrative cells for context and insights after each chart or table.
+
+Inspect the /sql/bayern_queries.sql file for “pure” SQL versions of key aggregations and filters.
+
+Adapt the notebook or SQL scripts to analyze other clubs by changing club_id (e.g. find another ID in your clubs.csv).
+
+## Future Directions
+Add fan-engagement and physical metrics (e.g. distance covered).
+
+Build an interactive dashboard with Streamlit or Voilà.
+
+Extend the workflow to other seasons or leagues.
+
+Moritz Philipp Haaf, BSc (WU) MA
+moritz_haaf@outlook.com
+itzmore-mph/itzmore-mph-portfolio
