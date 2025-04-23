@@ -24,7 +24,7 @@ bundesliga-analysis/
 │   └── bayern/              # Outputs for Bayern Munich
 │
 └── README.md                # Overview and documentation
-
+```
 ## Getting Started
 ### Prerequisites
 
