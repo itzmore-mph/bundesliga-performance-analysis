@@ -1,7 +1,4 @@
-# itzmore-mph
-BundesligaPerformanceAnalysis
-
-## Bundesliga Club Performance Analysis
+# Bundesliga Club Performance Analysis
 
 ### Project Overview
 This project analyzes the performance and market value of FC Bayern Munich during the 2023-2024 Bundesliga season. Utilizing data analytics tools and techniques in Python and SQL, the analysis offers actionable insights focusing on key performance indicators, trends, and future market value forecasts.
