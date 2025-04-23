@@ -1,5 +1,5 @@
 # itzmore-mph
-Coding Repository of itzmore
+BundesligaPerformanceAnalysis
 
 ## Bundesliga Club Performance Analysis
 
@@ -36,7 +36,8 @@ Database Access: Ensure you have access to a SQL server or a local database setu
 ### Installation
 Clone the repository to your local machine:
 
-git clone https://github.com/itzmore-mph/itzmore-mph-portfolio.git
+git clone https://github.com/itzmore-mph/BundesligaPerformanceAnalysis
+.git
 cd bundesliga-analysis
 
 ### Running the Analysis
