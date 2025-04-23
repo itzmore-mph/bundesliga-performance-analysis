@@ -54,12 +54,3 @@ This project is licensed under the Apache License - see the LICENSE.md file for 
 
 Contact
 For queries or collaboration, please open an issue in the GitHub repository.
-
-
-### How to Use:
-- Copy the above markdown text.
-- Create a file named `README.md` in the root of your project directory (if it doesn't already exist).
-- Paste the copied text into the `README.md` file.
-- Save the file and push it to your GitHub repository.
-
-This format is ready for GitHub and should display correctly with the intended headings, structure, and formatting. If you have any additional requests or need further adjustments, just let me know!
