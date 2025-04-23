@@ -1,7 +1,4 @@
-# itzmore-mph
-Coding Repository of itzmore
-
-## Bundesliga Club Performance Analysis
+# Bundesliga Club Performance Analysis
 
 ### Project Overview
 This project analyzes the performance and market value of FC Bayern Munich during the 2023-2024 Bundesliga season. Utilizing data analytics tools and techniques in Python and SQL, the analysis offers actionable insights focusing on key performance indicators, trends, and future market value forecasts.
@@ -24,7 +21,7 @@ bundesliga-analysis/
 │   └── bayern/              # Outputs for Bayern Munich
 │
 └── README.md                # Overview and documentation
-
+```
 ## Getting Started
 ### Prerequisites
 
@@ -36,7 +33,8 @@ Database Access: Ensure you have access to a SQL server or a local database setu
 ### Installation
 Clone the repository to your local machine:
 
-git clone https://github.com/itzmore-mph/itzmore-mph-portfolio.git
+git clone https://github.com/itzmore-mph/BundesligaPerformanceAnalysis
+.git
 cd bundesliga-analysis
 
 ### Running the Analysis
@@ -56,12 +54,3 @@ This project is licensed under the Apache License - see the LICENSE.md file for 
 
 Contact
 For queries or collaboration, please open an issue in the GitHub repository.
-
-
-### How to Use:
-- Copy the above markdown text.
-- Create a file named `README.md` in the root of your project directory (if it doesn't already exist).
-- Paste the copied text into the `README.md` file.
-- Save the file and push it to your GitHub repository.
-
-This format is ready for GitHub and should display correctly with the intended headings, structure, and formatting. If you have any additional requests or need further adjustments, just let me know!
