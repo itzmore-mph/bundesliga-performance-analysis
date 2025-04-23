@@ -1,7 +1,0 @@
-{
-    "installOptions": {
-        "installFromRepository": true,
-        "libraryPath": "/Users/mph/Documents/Coding Topics/itzmore-mph/portfolio-github-mph/itzmore-mph_portfolio-github-mph_R/renv/library/R-4.3/aarch64-apple-darwin20",
-        "installDependencies": true
-    }
-}
