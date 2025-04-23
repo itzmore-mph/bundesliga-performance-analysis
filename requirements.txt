@@ -3,5 +3,5 @@ numpy
 seaborn
 matplotlib
 plotly
+duckdb
 scikit-learn
-requests
