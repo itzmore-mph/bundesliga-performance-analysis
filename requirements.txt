@@ -1,7 +1,15 @@
-pandas
-numpy
-seaborn
-matplotlib
-plotly
-duckdb
-scikit-learn
+# Core data & analysis
+pandas>=1.5.0
+numpy>=1.24.0
+
+# SQL engine
+duckdb>=0.7.0
+
+# Visualization
+matplotlib>=3.5.0
+seaborn>=0.12.0
+plotly>=5.10.0
+adjustText>=0.7.3
+
+# Machine learning
+scikit-learn>=1.1.0
