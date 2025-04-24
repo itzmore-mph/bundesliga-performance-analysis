@@ -1,12 +1,36 @@
-# Performance and Valuation Insights: German Bundesliga Portfolio
+# ⚽ German Bundesliga Performance & Valuation Portfolio
 
-This repository contains a Jupyter Notebook and accompanying SQL scripts analyzing FC Bayern Munich’s performance and market dynamics during the 2023/2024 Bundesliga season. It demonstrates a full-stack data workflow—from raw CSV ingestion and DuckDB SQL queries to Pandas preprocessing, visualization, and predictive modeling.
+![Python](https://img.shields.io/badge/python-3.10+-blue)  
+![License](https://img.shields.io/badge/license-MIT-green)
+
+In this project we combine DuckDB, Pandas, Seaborn/Matplotlib, and Plotly to answer three key questions:
+
+1. **What drives player market value?**  
+2. **How dominant was Bayern in 2023/24?**  
+3. **Can simple on-field stats forecast future value?**
 
 ---
 
 ## 📂 Project Structure
 ```
-├── Raw-Data_CSV_Football-Analysis_German-Bundesliga/ # Kaggle-sourced CSV datasets ├── sql/ │ └── sql_queries.sql # Standalone SQL queries (club_id = 27) ├── bundesliga_portfolio_final.ipynb # Main analysis notebook └── README.md # This file
+bundesliga-portfolio/
+│
+├── data/raw/                                # CSVs from Kaggle
+│   ├── appearances.csv
+│   ├── club_games.csv
+│   ├── clubs.csv
+│   ├── competitions.csv
+│   ├── game_events.csv
+│   ├── games.csv
+│   ├── player_valuations.csv
+│   └── players.csv
+│
+├── sql/                                     # Standalone SQL queries
+│   └── sql_queries.sql
+│
+├── requirements.txt                         # Python dependencies
+├── bundesliga_portfolio_final.ipynb         # Main notebook
+└── README.md                                # README
 ```
 
 ---
@@ -79,6 +103,6 @@ Build an interactive dashboard with Streamlit or Voilà.
 
 Extend the workflow to other seasons or leagues.
 
-Moritz Philipp Haaf, BSc (WU) MA
+Moritz Philipp Haaf, BSc MA
 moritz_haaf@outlook.com
 itzmore-mph/itzmore-mph-portfolio
