@@ -1,84 +1,94 @@
-# Performance and Valuation Insights: German Bundesliga Portfolio
+# ⚽ German Bundesliga Performance & Valuation Portfolio  
+### 🎯 Case Study: Bayer 04 Leverkusen’s Unbeaten 2023/24 Season
 
-This repository contains a Jupyter Notebook and accompanying SQL scripts analyzing FC Bayern Munich’s performance and market dynamics during the 2023/2024 Bundesliga season. It demonstrates a full-stack data workflow—from raw CSV ingestion and DuckDB SQL queries to Pandas preprocessing, visualization, and predictive modeling.
+![Python](https://img.shields.io/badge/python-3.10+-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+
+This project combines **DuckDB**, **Pandas**, **Seaborn/Matplotlib**, and **Plotly** to analyze one of the most historic Bundesliga campaigns ever — **Bayer 04 Leverkusen’s unbeaten run in the 2023/24 season**.
+
+We explore:
+
+1. **What drives player market value?**  
+2. **How dominant was Bayer Leverkusen in 2023/24?**  
+3. **Can simple match stats forecast market value?**
 
 ---
 
 ## 📂 Project Structure
+
 ```
-├── Raw-Data_CSV_Football-Analysis_German-Bundesliga/ # Kaggle-sourced CSV datasets ├── sql/ │ └── sql_queries.sql # Standalone SQL queries (club_id = 27) ├── bundesliga_portfolio_final.ipynb # Main analysis notebook └── README.md # This file
+bundesliga-portfolio/
+│
+├── data/raw/                                 # Raw CSVs (from Transfermarkt dataset)
+│   ├── appearances.csv
+│   ├── club_games.csv
+│   ├── clubs.csv
+│   ├── competitions.csv
+│   ├── game_events.csv
+│   ├── games.csv
+│   ├── player_valuations.csv
+│   └── players.csv
+│
+├── sql/                                     # Standalone SQL queries
+│   └── sql_queries.sql
+│
+├── requirements.txt                         # Python dependencies
+├── bundesliga_portfolio_final.ipynb         # Main notebook
+└── README.md                                # README
 ```
 
 ---
 
 ## 🔑 Key Features
 
-1. **Hybrid SQL & Python Workflow**  
-   - **DuckDB** views over CSVs for fast, in-notebook joins & aggregations  
-   - **Pandas**, **Matplotlib/Seaborn**, and **Plotly** for cleaning, EDA, and interactive plotting  
+### ⚙️ Hybrid SQL & Python Workflow
+- **DuckDB** for fast in-memory joins & queries  
+- **Pandas**, **Seaborn**, and **Plotly** for cleaning, EDA, and visualization  
 
-2. **Data Quality & Preprocessing**  
-   - Snake_case column standardization via regex helper  
-   - Datetime parsing (`errors='coerce'`) to detect invalid dates  
-   - Early **orphan-key** checks to ensure referential integrity  
+### ✅ Data Quality & Preprocessing
+- Snake_case column renaming via regex  
+- Datetime parsing with error detection  
+- Referential integrity checks (e.g., orphan `player_id`s)
 
-3. **Comprehensive Analysis**  
-   - **xG vs Goals** correlation  
-   - **Match result** distribution (W/D/L)  
-   - **Market-value** trend analysis  
-   - **Predictive modeling** with Ridge regression & 5-fold CV  
-   - **Cumulative** xG and actual goals over time  
+### 📊 In-Depth Performance & Valuation Analysis
+- **Cumulative goals & assists** over the season  
+- **Match result distributions** (W/D/L)  
+- **Player market value trends** over time  
+- **Random Forest feature importance** (goals vs. assists vs. minutes)  
+- **Regression modeling** with Ridge & cross-validation  
 
-4. **Standalone SQL Queries**  
-   - Fetch total goals, xG, assists, match results, and most-valuable players  
-   - Parameterized on `club_id = 27` for FC Bayern, easily adjustable  
+### 📈 Key Match Highlight
+- Storytelling overlay: Bayer Leverkusen’s **3–0 tactical masterclass vs. Bayern** (Feb 10, 2024)  
+- Interpreted within the **cumulative contribution graph** to show real-world impact on trends
 
-5. **Reproducibility**  
-   - Clear section headings & narrative interpretations  
-   - Requirements list for easy environment setup  
-   - README and `/sql/` folder document how to run everything end-to-end  
+### 🧪 Reproducibility
+- Structured notebook with markdown commentary  
+- `requirements.txt` for full environment recreation  
+- `/sql/` folder for modular query reuse  
 
 ---
 
 ## 🚀 Getting Started
 
-1. **Clone the repository**  
-   ```bash
-   git clone https://github.com/itzmore-mph/itzmore-mph-portfolio.git
-   cd itzmore-mph-portfolio
-   ```
-
-2. **Install dependencies**
-
-pip install pandas numpy seaborn matplotlib plotly duckdb scikit-learn
-
-3. **Verify data path**
-Ensure the Raw-Data_CSV_Football-Analysis_German-Bundesliga/ directory sits at the project root.
-
-4. **Run the Jupyter Notebook**
-
+```bash
+git clone https://github.com/itzmore-mph/itzmore-mph-portfolio.git
+cd itzmore-mph-portfolio
+pip install -r requirements.txt
 jupyter notebook bundesliga_portfolio_final.ipynb
-
-5. **Execute the SQL script (optional)**
-If you have DuckDB installed, you can run all SQL queries in one go:
-
-duckdb --read-only -f sql/bayern_queries.sql
-Or open sql/sql_queries.sql in your preferred SQL client—remember to adjust club_id or <match_id> as needed.
-
+```
 ## Usage & Interpretation
-Follow the notebook’s narrative cells for context and insights after each chart or table.
-
-Inspect the /sql/bayern_queries.sql file for “pure” SQL versions of key aggregations and filters.
-
-Adapt the notebook or SQL scripts to analyze other clubs by changing club_id (e.g. find another ID in your clubs.csv).
+- Follow the Jupyter Notebook’s narrative flow for insight-rich storytelling.
+- Adjust the club_id in both the notebook and SQL files to analyze other teams.
+- SQL queries are modular — explore sql/sql_queries.sql for standalone usage.
 
 ## Future Directions
-Add fan-engagement and physical metrics (e.g. distance covered).
+- Add richer features: contract length, player age, xG/xa, injury history
+- Extend modeling: XGBoost, LightGBM, and neural nets
+- Deploy via Streamlit dashboard for scouting teams to explore in real time
+- Expand the approach to other leagues (Serie A, Premier League, etc.)
 
-Build an interactive dashboard with Streamlit or Voilà.
+Moritz Philipp Haaf, BSc MA
 
-Extend the workflow to other seasons or leagues.
-
-Moritz Philipp Haaf, BSc (WU) MA
 moritz_haaf@outlook.com
+
 itzmore-mph/itzmore-mph-portfolio
