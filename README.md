@@ -88,5 +88,7 @@ jupyter notebook bundesliga_portfolio_final.ipynb
 - Expand the approach to other leagues (Serie A, Premier League, etc.)
 
 Moritz Philipp Haaf, BSc MA
+
 moritz_haaf@outlook.com
+
 itzmore-mph/itzmore-mph-portfolio
