@@ -1,15 +1,19 @@
-# Core data & analysis
+# Core Data Analysis
 pandas>=1.5.0
 numpy>=1.24.0
 
-# SQL engine
+# SQL Query Engine
 duckdb>=0.7.0
 
-# Visualization
+# Visualization Libraries
 matplotlib>=3.5.0
 seaborn>=0.12.0
 plotly>=5.10.0
 adjustText>=0.7.3
 
-# Machine learning
+# Machine Learning
 scikit-learn>=1.1.0
+
+# Optional Extras (for deployment or dashboarding later)
+# streamlit>=1.30.0
+# voila
