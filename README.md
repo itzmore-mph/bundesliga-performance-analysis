@@ -75,7 +75,7 @@ git clone https://github.com/itzmore-mph/itzmore-mph-portfolio.git
 cd itzmore-mph-portfolio
 pip install -r requirements.txt
 jupyter notebook bundesliga_portfolio_final.ipynb
-
+```
 ## Usage & Interpretation
 - Follow the Jupyter Notebook’s narrative flow for insight-rich storytelling.
 - Adjust the club_id in both the notebook and SQL files to analyze other teams.
