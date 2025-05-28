@@ -89,6 +89,6 @@ jupyter notebook bundesliga_portfolio_final.ipynb
 
 Moritz Philipp Haaf, BSc MA
 
-moritz_haaf@outlook.com
+itzmore.dev@gmail.com
 
 itzmore-mph/itzmore-mph-portfolio
