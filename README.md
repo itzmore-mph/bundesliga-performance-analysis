@@ -1,4 +1,4 @@
-# ⚽ German Bundesliga Performance & Valuation Portfolio  
+# ⚽ German Bundesliga Performance Analysis
 ### 🎯 Case Study: Bayer 04 Leverkusen’s Unbeaten 2023/24 Season
 
 ![Python](https://img.shields.io/badge/python-3.10+-blue)
