@@ -1,1 +1,25 @@
-.qodo
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS / editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+.qodo/
+
+# Env / secrets
+.env
+.env.*
+
+# Local caches
+api_football_cache*

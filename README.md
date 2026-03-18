@@ -17,24 +17,29 @@ We explore:
 ## 📂 Project Structure
 
 ```
-bundesliga-portfolio/
+bundesliga-performance-analysis/
 │
-├── data/raw/                                 # Raw CSVs (from Transfermarkt dataset)
-│   ├── appearances.csv
-│   ├── club_games.csv
-│   ├── clubs.csv
-│   ├── competitions.csv
-│   ├── game_events.csv
-│   ├── games.csv
-│   ├── player_valuations.csv
-│   └── players.csv
+├── data/
+│   └── raw/
 │
-├── sql/                                     # Standalone SQL queries
-│   └── sql_queries.sql
+├── figures/
+│   ├── bundesliga-project-preview.png
+│   └── ...
 │
-├── requirements.txt                         # Python dependencies
-├── bundesliga_portfolio_final.ipynb         # Main notebook
-└── README.md                                # README
+├── notebooks/
+│   └── bundesliga_performance.ipynb        # Main notebook
+│
+├── sql/
+│   └── sql_queries.sql                     # Standalone SQL queries
+│
+├── docs/
+│   └── index.html
+│
+├── .gitignore
+├── LICENSE
+├── README.md
+└── requirements.txt                        # Python dependencies
+
 ```
 
 ---
