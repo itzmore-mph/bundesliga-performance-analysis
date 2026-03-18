@@ -1,32 +1,74 @@
 # ⚽ Bundesliga Performance Analysis
 
-**Case study:** Bayer 04 Leverkusen's 2023/24 Bundesliga season
+## Case Study, Bayer 04 Leverkusen's 2023/24 Bundesliga Season
 
-This repository presents an end-to-end football analytics case study built around **Bundesliga team performance**, **player valuation**, and **season storytelling** using **Python**, **DuckDB**, and **Jupyter Notebook**.
+This repository presents a notebook-first football analytics case study focused on **Bayer 04 Leverkusen's unbeaten 2023/24 Bundesliga campaign**.
 
-The project uses Bayer 04 Leverkusen's 2023/24 campaign as the main narrative example and combines SQL-style exploration, Python-based preprocessing, visual analysis, and simple predictive modeling.
+The project combines:
+- **DuckDB** for fast SQL-style querying
+- **Pandas** for shaping analysis tables
+- **Matplotlib / Seaborn** for visual exploration
+- **scikit-learn** for a lightweight market value modeling demonstration
 
----
-
-## Project goals
-
-This project focuses on three main questions:
-
-1. **How dominant was Bayer 04 Leverkusen in the 2023/24 Bundesliga season?**
-2. **How do player performance indicators relate to market value?**
-3. **How can SQL, pandas, and visual analytics be combined in a clean football analytics workflow?**
+The analysis is designed as a **portfolio project for football analytics and sports data roles**, with a strong emphasis on clear scoping, reproducibility, and readable storytelling.
 
 ---
 
-## Tech stack
+## Headline findings
 
-- **Python**
-- **DuckDB**
-- **pandas**
-- **NumPy**
-- **Matplotlib / Seaborn**
-- **scikit-learn**
-- **Jupyter Notebook**
+- Bayer 04 Leverkusen's 2023/24 Bundesliga season is analyzed through a tightly scoped, notebook-first workflow.
+- SQL-style exploration and visual EDA highlight match outcomes, player contribution patterns, and squad context.
+- A simple market value modeling section shows that basic counting stats alone explain limited variance, which motivates richer football-specific features.
+
+---
+
+## Project objective
+
+This case study explores three main questions:
+
+1. **How dominant was Bayer 04 Leverkusen in the Bundesliga 2023/24 season?**
+2. **Which players contributed most strongly across the campaign?**
+3. **How far can simple season aggregates go in explaining player market value?**
+
+---
+
+## Supported workflow
+
+This repository's **supported workflow is remote-first and snapshot-consistent**.
+
+The notebook loads all core Transfermarkt tables from a **single hosted DuckDB-readable source** using remote `.csv.gz` files. This avoids version mismatches across tables such as `games`, `appearances`, `club_games`, and `player_valuations`.
+
+The supported workflow does **not** require a local `data/raw/` directory.
+
+---
+
+## Data source
+
+The project uses the public **transfermarkt-datasets** source by `dcaribou`.
+
+Relevant tables include:
+- `games`
+- `appearances`
+- `club_games`
+- `game_events`
+- `players`
+- `player_valuations`
+- `clubs`
+- `competitions`
+
+These tables are linked through shared IDs such as `game_id`, `player_id`, `club_id`, and `competition_id`.
+
+---
+
+## Why remote DuckDB
+
+A key design choice in this project is using **remote DuckDB access** instead of local raw CSV snapshots.
+
+Benefits:
+- avoids mixing tables from different download dates
+- improves reproducibility across machines
+- keeps the repository lighter and cleaner
+- makes the notebook the single analytical source of truth
 
 ---
 
@@ -34,180 +76,140 @@ This project focuses on three main questions:
 
 ```text
 bundesliga-performance-analysis/
-├── docs/
-│   └── index.html
-├── figures/
-│   └── plot-annual-market-value-trend.png
 ├── notebooks/
 │   └── bundesliga_performance_analysis.ipynb
-├── .gitignore
-├── LICENSE
-├── README.md
+├── figures/
+│   └── ... optional exported charts
 ├── requirements.txt
-└── requirements-dev.txt
+├── requirements-dev.txt
+├── README.md
+└── LICENSE
 ```
+
+If additional legacy artifacts are still visible in the repository, they should be treated as cleanup targets rather than part of the supported workflow.
 
 ---
 
-## Dataset and data access
+## Notebook structure
 
-The project uses the **transfermarkt-datasets** source by `dcaribou`, accessed **remotely via DuckDB** and hosted `.csv.gz` files.
+The notebook follows a clear narrative:
 
-Core tables used in the notebook include:
+1. **Executive summary**
+2. **Remote DuckDB setup**
+3. **Data validation and scoped views**
+4. **SQL-style exploration**
+5. **Exploratory data analysis**
+6. **Market value modeling**
+7. **Conclusions and limitations**
 
-- `appearances`
-- `club_games`
-- `clubs`
-- `competitions`
-- `game_events`
-- `games`
-- `player_valuations`
-- `players`
-
-This remote-only approach avoids local `data/raw/` mismatches across tables and improves reproducibility.
-
-> **Important:** Running the notebook requires an internet connection.
+This is intentionally structured as a portfolio-ready case study rather than an unstructured exploratory notebook.
 
 ---
 
-## Analysis workflow
+## Reproducibility
 
-The notebook is structured as a compact football analytics case study:
+To reproduce the analysis:
 
-### 1. Remote loading and preprocessing
-- load Transfermarkt tables remotely via DuckDB
-- standardize and inspect columns
-- parse dates and prepare season-specific subsets
+1. Create a clean Python environment
+2. Install the listed dependencies
+3. Ensure internet access is available for:
+   - the hosted dataset
+   - DuckDB `httpfs`
+4. Run the notebook top-to-bottom from a clean kernel
 
-### 2. SQL-based exploration with DuckDB
-- query match, team, and player-level data
-- combine multiple tables efficiently
-- validate assumptions before visualization and modeling
-
-### 3. Exploratory data analysis
-- goals vs assists
-- match result distribution
-- market value trend exploration
-- cumulative attacking output over the season
-
-### 4. Performance storytelling
-- focus on Bayer 04 Leverkusen's 2023/24 season
-- examine cumulative contributions and season dominance
-- connect quantitative outputs to a real football narrative
-
-### 5. Predictive modeling
-- baseline regression approach for market value prediction
-- tree-based feature importance for interpretability
-- emphasis on learning value, not only raw predictive performance
+The notebook includes **early validation checks** to detect:
+- missing remote access support
+- stale or incomplete join coverage
+- unexpected season or team scoping issues
+- weak valuation coverage for modeled players
 
 ---
 
-## Key outputs
+## Installation
 
-Examples of outputs generated in the notebook include:
-
-- player contribution charts
-- Bayer Leverkusen win / draw / loss breakdown
-- market value trend visualizations
-- feature importance charts
-- cumulative season-level performance views
-
----
-
-## Getting started
-
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/itzmore-mph/bundesliga-performance-analysis.git
-cd bundesliga-performance-analysis
-```
-
-### 2. Create and activate a virtual environment
-
-**macOS / Linux**
-
-```bash
-python -m venv .venv
-source .venv/bin/activate
-```
-
-**Windows**
-
-```bash
-python -m venv .venv
-.venv\Scripts\activate
-```
-
-### 3. Install dependencies
+### Core environment
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Launch the notebook
+### Notebook environment
 
 ```bash
-jupyter notebook notebooks/bundesliga_performance_analysis.ipynb
+pip install -r requirements-dev.txt
+```
+
+If needed, install and register a notebook kernel:
+
+```bash
+pip install ipykernel
+python -m ipykernel install --user --name bundesliga-analysis --display-name "Python (bundesliga-analysis)"
 ```
 
 ---
 
-## Reproducibility notes
+## Main tools and libraries
 
-To run the notebook successfully:
-
-- use a live internet connection
-- run the notebook from top to bottom
-- avoid mixing local CSV snapshots into the workflow
-- keep the package environment close to the provided requirements
-
-The analysis is centered on the **2023/24 Bundesliga season** and uses **Bayer 04 Leverkusen** as the featured case study.
-
----
-
-## Why this project matters
-
-This repository is designed as a portfolio-style project that demonstrates:
-
-- practical football analytics thinking
-- SQL + Python workflow integration
-- clear visual storytelling
-- reproducible notebook-based analysis
-- applied machine learning in a sports context
-
-It is especially relevant for roles in:
-
-- football data analytics
-- sports data science
-- performance analysis
-- analytics engineering
-- scouting and decision support
+- Python
+- DuckDB
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- adjustText
+- scikit-learn
+- Jupyter / ipykernel
 
 ---
 
-## Possible next improvements
+## Modeling note
 
-Future extensions could include:
+The market value modeling section is intentionally **illustrative**, not production-grade.
 
-- richer player features such as age, contract length, position groups, or per-90 metrics
-- expected goals or expected assists features from event data providers
-- model benchmarking with XGBoost or LightGBM
-- migration from notebook-first analysis to a small Streamlit app
-- extension to other leagues for cross-league comparison
+The sample is relatively small and based on simple season-level aggregates, so model outputs should be interpreted as a lightweight demonstration of:
+- feature preparation
+- validation framing
+- baseline comparison
+- analytical limitations
+
+It is included to show workflow thinking, not to claim a production-ready football valuation model.
+
+---
+
+## Current scope
+
+- **Competition:** Bundesliga (`L1`)
+- **Season:** 2023/24
+- **Club:** Bayer 04 Leverkusen
+
+This narrow scope is intentional. It keeps the case study coherent and easier to interpret for portfolio review.
+
+---
+
+## Future improvements
+
+Possible next extensions include:
+- richer player features, such as age, position groups, contract context, or advanced event-based metrics
+- stronger cross-validated model comparison on a broader league-wide sample
+- a cleaner exported HTML report or dashboard layer
+- expansion to additional leagues for comparative analysis
+
+---
+
+## Portfolio purpose
+
+This project is part of my football analytics portfolio and is intended to demonstrate:
+- SQL plus Python workflow design
+- scoped sports data analysis
+- analytical storytelling
+- reproducible notebook structure
+- honest interpretation of model limitations
 
 ---
 
 ## Author
 
-**Moritz Philipp Haaf**  
-Freelance Sports Data Scientist  
-GitHub: [itzmore-mph](https://github.com/itzmore-mph)
-Portfolio: [itzmore.dev](https://itzmore.dev)
+**Moritz Philipp Haaf**
 
-
----
-
-## License
-
-This project is licensed under the **Apache-2.0 License**.
+- LinkedIn: `https://www.linkedin.com/in/moritz-philipp-haaf/`
+- GitHub: `https://github.com/itzmore-mph`
