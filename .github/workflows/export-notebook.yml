@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - "notebooks/**.ipynb"
+  workflow_dispatch:
 
 permissions:
   contents: write
