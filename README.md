@@ -52,7 +52,9 @@ The supported workflow does **not** require a local `data/raw/` directory.
 
 ## Data source
 
-The project uses the public **transfermarkt-datasets** source by `dcaribou`.
+The project uses the public **[transfermarkt-datasets](https://github.com/dcaribou/transfermarkt-datasets)** project maintained by [David Caribou (@dcaribou)](https://github.com/dcaribou), licensed under **[CC0 1.0 Universal (Public Domain)](https://github.com/dcaribou/transfermarkt-datasets/blob/master/LICENSE)**.
+
+> Data sourced from `transfermarkt-datasets` by David Caribou — [github.com/dcaribou/transfermarkt-datasets](https://github.com/dcaribou/transfermarkt-datasets). Licensed CC0 1.0 Universal.
 
 Relevant tables include:
 - `games`
