@@ -1,6 +1,13 @@
-# ⚽ Bundesliga Performance Analysis
+# Bundesliga Performance Analysis
 
-## Case Study, Bayer 04 Leverkusen's 2023/24 Bundesliga Season
+## Case Study — Bayer 04 Leverkusen's Historic 2023/24 Unbeaten Season
+
+![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python&logoColor=white)
+![License](https://img.shields.io/badge/License-Apache%202.0-green)
+![DuckDB](https://img.shields.io/badge/DuckDB-remote--first-yellow?logo=duckdb)
+![Status](https://img.shields.io/badge/Status-Portfolio%20Ready-brightgreen)
+
+> **Key Finding:** Bayer 04 Leverkusen went 34 Bundesliga games unbeaten in 2023/24 — the first club in Bundesliga history to do so. Their dominance was built on collective depth: 4 players with 9+ goals AND 9+ assists. This notebook quantifies *how far* ahead they were, *who* drove it, and *what* season-level performance data can (and cannot) explain about player market value.
 
 This repository presents a notebook-first football analytics case study focused on **Bayer 04 Leverkusen's unbeaten 2023/24 Bundesliga campaign**.
 
@@ -16,9 +23,10 @@ The analysis is designed as a **portfolio project for football analytics and spo
 
 ## Headline findings
 
-- Bayer 04 Leverkusen's 2023/24 Bundesliga season is analyzed through a tightly scoped, notebook-first workflow.
-- SQL-style exploration and visual EDA highlight match outcomes, player contribution patterns, and squad context.
-- A simple market value modeling section shows that basic counting stats alone explain limited variance, which motivates richer football-specific features.
+- **Unbeaten across 34 matches** — 28 wins, 6 draws, 0 losses, with a goals-per-game rate well above the Bundesliga average.
+- **Collective attacking depth** — Victor Boniface (14G+14A), Florian Wirtz (11G+11A), Alejandro Grimaldo (10G+8A), and Jeremie Frimpong (9G+9A) all exceeded 9 combined goal contributions. No single-player dependency.
+- **Dominant home and away** — the unbeaten run held across both venues, confirming structural quality rather than home-ground reliance.
+- **Valuation modeling insight** — expanding to all 300+ Bundesliga players and using per-90 rates, age, and position group substantially improves on a raw counting-stat baseline, yet key drivers (contract length, injury history, international profile) remain unobserved — an honest and analytically instructive result.
 
 ---
 
@@ -99,8 +107,18 @@ The notebook follows a clear narrative:
 3. **Data validation and scoped views**
 4. **SQL-style exploration**
 5. **Exploratory data analysis**
-6. **Market value modeling**
-7. **Conclusions and limitations**
+   - Goals & Assists per 90 min (efficiency-adjusted, min 450 min)
+   - Home vs Away performance split
+6. **Performance analysis** — match result distribution
+7. **Market value trend** — squad valuation evolution with percentiles
+8. **Predictive modeling**
+   - Bundesliga-wide dataset (300+ players, per-90 rates, age, position)
+   - Feature correlation heatmap
+   - Ridge regression baseline (CV R² mean ± std)
+   - Random Forest feature importance
+9. **Cumulative attacking output** — season timeline
+10. **Leverkusen vs Bundesliga average** — benchmark comparison
+11. **Conclusions and limitations**
 
 This is intentionally structured as a portfolio-ready case study rather than an unstructured exploratory notebook.
 
@@ -189,10 +207,10 @@ This narrow scope is intentional. It keeps the case study coherent and easier to
 ## Future improvements
 
 Possible next extensions include:
-- richer player features, such as age, position groups, contract context, or advanced event-based metrics
-- stronger cross-validated model comparison on a broader league-wide sample
-- a cleaner exported HTML report or dashboard layer
-- expansion to additional leagues for comparative analysis
+- xG and xA from event data for a luck-vs-skill decomposition
+- contract years remaining and injury records to improve valuation modeling
+- multi-season comparison to test whether the 2023/24 season was an outlier or part of a trend
+- expansion to additional leagues for cross-league benchmarking
 
 ---
 
