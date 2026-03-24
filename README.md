@@ -1,6 +1,6 @@
 # Bundesliga Performance Analysis
 
-## Case Study — Bayer 04 Leverkusen's Historic 2023/24 Unbeaten Season
+## Case Study - Bayer 04 Leverkusen's Historic 2023/24 Unbeaten Season
 
 ![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python&logoColor=white)
 ![License](https://img.shields.io/badge/License-Apache%202.0-green)
@@ -23,10 +23,10 @@ The analysis is designed as a **portfolio project for football analytics and spo
 
 ## Headline findings
 
-- **Unbeaten across 34 matches** — 28 wins, 6 draws, 0 losses, with a goals-per-game rate well above the Bundesliga average.
-- **Collective attacking depth** — Victor Boniface (14G+14A), Florian Wirtz (11G+11A), Alejandro Grimaldo (10G+8A), and Jeremie Frimpong (9G+9A) all exceeded 9 combined goal contributions. No single-player dependency.
-- **Dominant home and away** — the unbeaten run held across both venues, confirming structural quality rather than home-ground reliance.
-- **Valuation modeling insight** — expanding to all 300+ Bundesliga players and using per-90 rates, age, and position group substantially improves on a raw counting-stat baseline, yet key drivers (contract length, injury history, international profile) remain unobserved — an honest and analytically instructive result.
+- **Unbeaten across 34 matches** - 28 wins, 6 draws, 0 losses, with a goals-per-game rate well above the Bundesliga average.
+- **Collective attacking depth** - Victor Boniface (14G+14A), Florian Wirtz (11G+11A), Alejandro Grimaldo (10G+8A), and Jeremie Frimpong (9G+9A) all exceeded 9 combined goal contributions. No single-player dependency.
+- **Dominant home and away** - the unbeaten run held across both venues, confirming structural quality rather than home-ground reliance.
+- **Valuation modeling insight** - expanding to all 300+ Bundesliga players and using per-90 rates, age, and position group substantially improves on a raw counting-stat baseline, yet key drivers (contract length, injury history, international profile) remain unobserved — an honest and analytically instructive result.
 
 ---
 
@@ -95,35 +95,6 @@ bundesliga-performance-analysis/
 ├── README.md
 └── LICENSE
 ```
-
-If additional legacy artifacts are still visible in the repository, they should be treated as cleanup targets rather than part of the supported workflow.
-
----
-
-## Notebook structure
-
-The notebook follows a clear narrative:
-
-1. **Executive summary**
-2. **Remote DuckDB setup**
-3. **Data validation and scoped views**
-4. **SQL-style exploration**
-5. **Exploratory data analysis**
-   - Goals & Assists per 90 min (efficiency-adjusted, min 450 min)
-   - Home vs Away performance split
-6. **Performance analysis** — match result distribution
-7. **Market value trend** — squad valuation evolution with percentiles
-8. **Predictive modeling**
-   - Bundesliga-wide dataset (300+ players, per-90 rates, age, position)
-   - Feature correlation heatmap
-   - Ridge regression baseline (CV R² mean ± std)
-   - Random Forest feature importance
-9. **Cumulative attacking output** — season timeline
-10. **Leverkusen vs Bundesliga average** — benchmark comparison
-11. **Conclusions and limitations**
-
-This is intentionally structured as a portfolio-ready case study rather than an unstructured exploratory notebook.
-
 ---
 
 ## Reproducibility
