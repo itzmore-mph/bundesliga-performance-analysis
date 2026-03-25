@@ -7,7 +7,7 @@
 ![DuckDB](https://img.shields.io/badge/DuckDB-remote--first-yellow?logo=duckdb)
 ![Status](https://img.shields.io/badge/Status-Portfolio%20Ready-brightgreen)
 
-> **Key Finding:** Bayer 04 Leverkusen went 34 Bundesliga games unbeaten in 2023/24 — the first club in Bundesliga history to do so. Their dominance was built on collective depth: 4 players with 9+ goals AND 9+ assists. This notebook quantifies *how far* ahead they were, *who* drove it, and *what* season-level performance data can (and cannot) explain about player market value.
+> **Key Finding:** Bayer 04 Leverkusen went 34 Bundesliga games unbeaten in 2023/24 - the first club in Bundesliga history to do so. Their dominance was built on collective depth: 4 players with 9+ goals AND 9+ assists. This notebook quantifies *how far* ahead they were, *who* drove it, and *what* season-level performance data can (and cannot) explain about player market value.
 
 This repository presents a notebook-first football analytics case study focused on **Bayer 04 Leverkusen's unbeaten 2023/24 Bundesliga campaign**.
 
